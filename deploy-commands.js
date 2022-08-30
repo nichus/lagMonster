@@ -1,5 +1,7 @@
-const fs = require('node:fs');
-const path = require('node:path');
+const fs		= require('node:fs');
+const path		= require('node:path');
+const logger	= require('./lib/logger.js');
+
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
@@ -17,6 +19,6 @@ for (const file of commandFiles) {
 const rest = new REST({ version: '10' }).setToken(token);
 
 rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
-	.then(() => console.log('Successfully registered application commands.'))
-	.catch(console.error);
+	.then(() => logger.info('Successfully registered application commands.'))
+	.catch(logger.error);
 
