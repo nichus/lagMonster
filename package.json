@@ -4,17 +4,27 @@
   "description": "The Lag Monster eats YOU!",
   "main": "lag.js",
   "scripts": {
-    "test": "nodemon lag.js"
+    "test": "nodemon lag.js",
+    "start": "node .",
+    "lint": "eslint .",
+    "dev": "node . | pino-pretty -i pid,hostname -t 'yyyy-mm-dd HH:MM:ss'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "nodemonConfig": {
+    "ignore": [
+      "data"
+    ]
+  },
   "devDependencies": {
     "eslint": "^8.22.0",
     "nodemon": "^2.0.19"
   },
   "dependencies": {
     "@discordjs/rest": "^1.1.0",
-    "discord.js": "^14.3.0"
+    "discord.js": "^14.3.0",
+    "pino": "^7.0.0-rc.9",
+    "pino-pretty": "^9.1.0"
   }
 }
