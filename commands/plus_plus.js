@@ -10,7 +10,7 @@ module.exports = {
       .setTitle('plus-plus Leaderboard')
       .setDescription('The top twelve users on the plus-plus leaderboard are:');
 
-    const { plusplus } = require('../data/plusPlus.json');
+    const plusplus = require('../data/plusPlus.json');
     const users = Object.keys(plusplus).map(user => { return [ user, plusplus[user]['score'] ]});
     users.sort((a,b) => {return b[1] - a[1]});
     users.filter(u => u[1]>0).slice(0,12).map(user => {
