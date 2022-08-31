@@ -11,7 +11,8 @@ module.exports = {
 			.setDescription('The top twelve users on the plus-plus leaderboard are:');
 
 		const plusplus = require('../data/plusPlus.json');
-		const users = Object.keys(plusplus).map(user => { return [ user, plusplus[user]['score'] ] });
+		console.log(plusplus);
+		const users = Object.keys(plusplus).map(user => { return [ plusplus[user]['id'], plusplus[user]['score'] ] });
 		users.sort((a, b) => { return b[1] - a[1] });
 		users.filter(u => u[1] > 0).slice(0, 12).map(user => {
 			plusPlusReport.addFields({ name: user[1].toString(), value: `<@${user[0]}>`, inline: true });
