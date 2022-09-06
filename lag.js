@@ -128,7 +128,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 			return;
 		}
 	}
-	logger.info(reaction.emoji.name);
+	// logger.info(reaction.emoji.name);
 	// console.log(reaction.interaction.user);
 	if (reaction.emoji.name === '👍' || reaction.emoji.name === 'plus'  || reaction.emoji.name === '👎') {
 		// logger.info(`${reaction.message.author}'s message "${reaction.message.content}" gained a reaction!`);
