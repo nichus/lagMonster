@@ -29,7 +29,7 @@ const lagPartials = [
 const client = new Client({ intents: lagIntents, partials: lagPartials });
 
 client.commands = new Collection();
-const commandsPath = path.join(__dirname, 'commands');
+const commandsPath = path.join(__dirname, 'lib/commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 const numberWang = new NumberWang();
 const plusPlus   = new PlusPlus(path.resolve('./data/plusPlus.json'));
