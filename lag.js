@@ -1,16 +1,17 @@
 // do requires
 //
-const fs = require('node:fs');
-const path = require('node:path');
+const     fs = require('node:fs');
+const   path = require('node:path');
 const logger = require('./lib/logger.js');
 
 const { Client, Collection, GatewayIntentBits, Partials, ActivityType } = require('discord.js');
-const { token } = require('./config.json');
-const { parseEvo } =  require('./lib/interactions/parseEvo.js');
+
+const {      token } = require('./config.json');
+const {   parseEvo } = require('./lib/interactions/parseEvo.js');
 const { parseDebug } = require('./lib/interactions/parseDebug.js');
-const { interact }   = require('./lib/interactions/interact.js');
+const {   interact } = require('./lib/interactions/interact.js');
 const { NumberWang } = require('./lib/interactions/numberWang.js');
-const { PlusPlus }   = require('./lib/interactions/plusPlus.js');
+const {   PlusPlus } = require('./lib/interactions/plusPlus.js');
 
 const lagIntents = [
 	GatewayIntentBits.Guilds,
