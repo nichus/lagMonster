@@ -7,7 +7,8 @@
     "test": "nodemon lag.js",
     "start": "node .",
     "lint": "eslint .",
-    "dev": "node . | pino-pretty -i pid,hostname -t 'yyyy-mm-dd HH:MM:ss'"
+    "dev": "node . | pino-pretty -i pid,hostname -t 'yyyy-mm-dd HH:MM:ss'",
+	"daemon": "nodemon lag.js | pino-pretty -cl -i pid,hostname -t 'yyyy-mm-ddTHH:MM:ss.NNN' --minimumLevel 'debug'"
   },
   "keywords": [],
   "author": "",
