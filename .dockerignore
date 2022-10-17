@@ -3,5 +3,6 @@
 .gitignore
 .npmrc
 Dockerfile
+data
 node_modules
 npm-debug.log
