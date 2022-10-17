@@ -1,0 +1,15 @@
+{
+	"apps": [
+		{
+			"name": "lag",
+			"script": "lag.js",
+			"merge_logs": true,
+			"max_restarts": 20,
+			"instances": 1,
+			"max_memory_restart": "200M",
+			"env": {
+				"NODE_ENV": "production",
+			}
+		}
+	]
+}
