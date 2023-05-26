@@ -4,7 +4,7 @@
   "description": "The Lag Monster eats YOU!",
   "main": "lag.js",
   "scripts": {
-	"pm2": "pm2 start processes.json --no-daemon",
+    "pm2": "pm2 start processes.json --no-daemon",
     "test": "nodemon lag.js",
     "start": "node .",
     "lint": "eslint .",
@@ -20,14 +20,14 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.22.0",
-    "nodemon": "^2.0.19"
+    "eslint": "^8.41.0",
+    "nodemon": "^2.0.22"
   },
   "dependencies": {
-    "@discordjs/rest": "^1.1.0",
-    "discord.js": "^14.3.0",
-    "pino": "^7.0.0-rc.9",
-    "pino-pretty": "^9.1.0",
-    "pm2": "^5.2.2"
+    "@discordjs/rest": "^1.7.1",
+    "discord.js": "^14.11.0",
+    "pino": "^7.11.0",
+    "pino-pretty": "^9.4.0",
+    "pm2": "^5.3.0"
   }
 }
