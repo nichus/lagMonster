@@ -112,8 +112,9 @@ client.on('messageCreate', (message) => {
 	// User mention
 	message_content = message_content.replace(/<@!?\d+>/g, '');
 
-	if (message_content.match(/pukes?|10.?35|vomits?/)) {
-		message.reply('pukes');
+	if (message_content.match(/\b(pukes?|10.?35|vomits?)\b/)) {
+		const options = ['🤢','🤮'];
+		message.react(options[Math.floor(Math.random() * options.length)]);
 	} else if (message.content.match(/masturbation|jerk.?off|jack.?off|masturbate|Louis CK|Louis C\.K\.|Louis Székely|rub one out|jacked off|beat.?off|masturbating|jerking off|ejaculate|fap|fapping|fappers|Lewis CK|Lewis C\.K\./)) {
 		const options = ['Do you guys mind if I masturbate furiously?', 'Want to be my JO bud? Straight guys only, no gay stuff.'];
 		message.reply(options[Math.floor(Math.random() * options.length)]);
