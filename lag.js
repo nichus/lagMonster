@@ -103,16 +103,25 @@ client.on('messageCreate', (message) => {
 	numberWang.check(message);
 	interact(message);
 
-	if (message.content.match(/pukes?|10.?35|vomits?/)) {
+	let message_content = message.content;
+	// Strip out mentions from our comparison
+	// Channel mention
+	message_content = message_content.replace(/<#\d+>/g, '');
+	// Role mention
+	message_content = message_content.replace(/<@&\d+>/g, '');
+	// User mention
+	message_content = message_content.replace(/<@!?\d+>/g, '');
+
+	if (message_content.match(/pukes?|10.?35|vomits?/)) {
 		message.reply('pukes');
 	} else if (message.content.match(/masturbation|jerk.?off|jack.?off|masturbate|Louis CK|Louis C\.K\.|Louis Székely|rub one out|jacked off|beat.?off|masturbating|jerking off|ejaculate|fap|fapping|fappers|Lewis CK|Lewis C\.K\./)) {
 		const options = ['Do you guys mind if I masturbate furiously?', 'Want to be my JO bud? Straight guys only, no gay stuff.'];
 		message.reply(options[Math.floor(Math.random() * options.length)]);
-	} else if (message.content.match(/\b\$500\b/)) {
+	} else if (message_content.match(/\b\$500\b/)) {
 		message.reply('ball');
-	} else if (message.content.match(/dps/i)) {
+	} else if (message_content.match(/dps/i)) {
 		message.react(message.guild.emojis.cache.get('370957798600605697'));
-	} else if (message.content.match(/appositive phrase|apposition/)) {
+	} else if (message_content.match(/appositive phrase|apposition/)) {
 		message.reply('You wanna start that Oxford Comma shit again?');
 	}
 });
