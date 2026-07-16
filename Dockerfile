@@ -1,4 +1,4 @@
-FROM node:18.11.0-bullseye-slim
+FROM node:26.5.0-bookworm-slim
 ENV NODE_ENV production
 WORKDIR /usr/src/lagMonster
 COPY --chown=node:node package*.json /usr/src/lagMonster/
