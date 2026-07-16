@@ -10,7 +10,7 @@ const {      token } = require('./config.json');
 const {   parseEvo } = require('./lib/interactions/parseEvo.js');
 const { parseDebug } = require('./lib/interactions/parseDebug.js');
 const {   interact } = require('./lib/interactions/interact.js');
-const { NumberWang } = require('./lib/interactions/numberWang.js');
+//const { NumberWang } = require('./lib/interactions/numberWang.js');
 const {   PlusPlus } = require('./lib/interactions/plusPlus.js');
 const {    Rollies } = require('./lib/interactions/rollies.js');
 
@@ -33,7 +33,7 @@ const client = new Client({ intents: lagIntents, partials: lagPartials });
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'lib/commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-const numberWang = new NumberWang();
+// const numberWang = new NumberWang();
 const plusPlus   = new PlusPlus(path.resolve('./data/plusPlus.json'));
 const rollies    = new Rollies();
 
@@ -102,7 +102,7 @@ client.on('messageCreate', (message) => {
 	plusPlus.parseMessage(message);
 	parseEvo(message);
 	parseDebug(message);
-	numberWang.check(message);
+	// numberWang.check(message);
 	interact(message);
 	rollies.check(message);
 
